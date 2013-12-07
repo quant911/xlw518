@@ -1,0 +1,16 @@
+﻿Build started 2013/12/6 20:48:08.
+     1>Project "D:\softdev\xlw-5.0.0f0\xlw\examples\Start Here - Example\vc11\RunInterfaceGenerator.vcxproj" on node 2 (Build target(s)).
+     1>Build:
+         "C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\..\..\VC\bin\NMAKE" /f RunInterfaceGenerator.nmake ENVIRON=Debug LIBRARY=FirstExample VC=vc10  ALL 
+         
+         Microsoft (R) Program Maintenance Utility Version 11.00.50727.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+     1>NMAKE : fatal error U1073: don't know how to make '..\..\..\build\vc10\Debug\InterfaceGenerator.exe'
+         Stop.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.MakeFile.Targets(38,5): error MSB3073: The command ""C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\..\..\VC\bin\NMAKE" /f RunInterfaceGenerator.nmake ENVIRON=Debug LIBRARY=FirstExample VC=vc10  ALL " exited with code 2.
+     1>Done Building Project "D:\softdev\xlw-5.0.0f0\xlw\examples\Start Here - Example\vc11\RunInterfaceGenerator.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.33

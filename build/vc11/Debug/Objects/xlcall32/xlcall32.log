@@ -1,0 +1,14 @@
+﻿Build started 2013/12/6 20:49:13.
+     1>Project "D:\softdev\xlw-5.0.0f0\xlw\build\vc11\xlcall32.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D XLCALL32_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /MTd /GS- /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\Objects\xlcall32\\" /Fd"Debug\Objects\xlcall32\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\xlcall32stub\xlcall32.cpp
+         xlcall32.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Debug\xlcall32.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB /DEF:"..\..\xlcall32stub\xlcall32.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Debug\xlcall32.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Debug\xlcall32.lib" /MACHINE:X86 /SAFESEH /DLL Debug\Objects\xlcall32\xlcall32.obj
+            Creating library Debug\xlcall32.lib and object Debug\xlcall32.exp
+         xlcall32.vcxproj -> D:\softdev\xlw-5.0.0f0\xlw\build\vc11\Debug\xlcall32.dll
+     1>Done Building Project "D:\softdev\xlw-5.0.0f0\xlw\build\vc11\xlcall32.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.75

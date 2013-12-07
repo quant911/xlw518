@@ -1,0 +1,35 @@
+﻿Build started 2013/12/6 20:56:37.
+     1>Project "D:\softdev\xlw-5.0.0f0\xlw\build\vc11\InterfaceGenerator.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\Objects\InterfaceGenerator\\" /Fd"Release\Objects\InterfaceGenerator\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\InterfaceGenerator\Functionizer.cpp ..\..\InterfaceGenerator\FunctionModel.cpp ..\..\InterfaceGenerator\main.cpp ..\..\InterfaceGenerator\ManagedOutputter.cpp ..\..\InterfaceGenerator\Outputter.cpp ..\..\InterfaceGenerator\OutputterHelper.cpp ..\..\InterfaceGenerator\ParserData.cpp ..\..\InterfaceGenerator\Strip.cpp ..\..\InterfaceGenerator\Tokenizer.cpp ..\..\InterfaceGenerator\TypeRegister.cpp ..\..\InterfaceGenerator\TypeRegistrations.cpp
+         Functionizer.cpp
+         FunctionModel.cpp
+         main.cpp
+         ManagedOutputter.cpp
+         Outputter.cpp
+         OutputterHelper.cpp
+         ParserData.cpp
+         Strip.cpp
+         Tokenizer.cpp
+         TypeRegister.cpp
+         TypeRegistrations.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Release\InterfaceGenerator.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Release\InterfaceGenerator.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"Release\InterfaceGenerator.lib" /MACHINE:X86 /SAFESEH Release\Objects\InterfaceGenerator\Functionizer.obj
+         Release\Objects\InterfaceGenerator\FunctionModel.obj
+         Release\Objects\InterfaceGenerator\main.obj
+         Release\Objects\InterfaceGenerator\ManagedOutputter.obj
+         Release\Objects\InterfaceGenerator\Outputter.obj
+         Release\Objects\InterfaceGenerator\OutputterHelper.obj
+         Release\Objects\InterfaceGenerator\ParserData.obj
+         Release\Objects\InterfaceGenerator\Strip.obj
+         Release\Objects\InterfaceGenerator\Tokenizer.obj
+         Release\Objects\InterfaceGenerator\TypeRegister.obj
+         Release\Objects\InterfaceGenerator\TypeRegistrations.obj
+         Generating code
+         Finished generating code
+         InterfaceGenerator.vcxproj -> D:\softdev\xlw-5.0.0f0\xlw\build\vc11\Release\InterfaceGenerator.exe
+     1>Done Building Project "D:\softdev\xlw-5.0.0f0\xlw\build\vc11\InterfaceGenerator.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.48

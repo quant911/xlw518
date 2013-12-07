@@ -1,0 +1,62 @@
+﻿Build started 2013/12/6 20:49:13.
+     1>Project "D:\softdev\xlw-5.0.0f0\xlw\build\vc11\xlw.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\..\include /Zi /nologo /W1 /WX- /Od /Oy- /D _SCL_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\Objects\5_0_0f0\\" /Fd"..\..\lib\\xlw-vc110-mt-gd-5_0_0f0.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\src\ArgList.cpp ..\..\src\Dispatcher.cpp ..\..\src\DoubleOrNothing.cpp ..\..\src\FileConverter.cpp ..\..\src\HiResTimer.cpp ..\..\src\MJCellMatrix.cpp ..\..\src\NCmatrices.cpp ..\..\src\PascalStringConversions.cpp ..\..\src\PathUpdater.cpp ..\..\src\TempMemory.cpp ..\..\src\Win32StreamBuf.cpp ..\..\src\xlcall.cpp ..\..\src\XlfAbstractCmdDesc.cpp ..\..\src\XlfArgDesc.cpp ..\..\src\XlfArgDescList.cpp ..\..\src\XlfCmdDesc.cpp ..\..\src\XlfExcel.cpp ..\..\src\XlfFuncDesc.cpp ..\..\src\XlfOperImpl.cpp ..\..\src\XlfOperProperties.cpp ..\..\src\XlfRef.cpp ..\..\src\XlfServices.cpp ..\..\src\XlFunctionRegistration.cpp ..\..\src\XlOpenClose.cpp
+         ArgList.cpp
+         Dispatcher.cpp
+         DoubleOrNothing.cpp
+         FileConverter.cpp
+         HiResTimer.cpp
+         MJCellMatrix.cpp
+         NCmatrices.cpp
+         PascalStringConversions.cpp
+         PathUpdater.cpp
+         TempMemory.cpp
+         Win32StreamBuf.cpp
+         xlcall.cpp
+         XlfAbstractCmdDesc.cpp
+         XlfArgDesc.cpp
+         XlfArgDescList.cpp
+         XlfCmdDesc.cpp
+         XlfExcel.cpp
+         XlfFuncDesc.cpp
+         XlfOperImpl.cpp
+         XlfOperProperties.cpp
+         Generating Code...
+         Compiling...
+         XlfRef.cpp
+         XlfServices.cpp
+         XlFunctionRegistration.cpp
+         XlOpenClose.cpp
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\..\lib\\xlw-vc110-mt-gd-5_0_0f0.lib" /NOLOGO Debug\Objects\5_0_0f0\ArgList.obj
+         Debug\Objects\5_0_0f0\Dispatcher.obj
+         Debug\Objects\5_0_0f0\DoubleOrNothing.obj
+         Debug\Objects\5_0_0f0\FileConverter.obj
+         Debug\Objects\5_0_0f0\HiResTimer.obj
+         Debug\Objects\5_0_0f0\MJCellMatrix.obj
+         Debug\Objects\5_0_0f0\NCmatrices.obj
+         Debug\Objects\5_0_0f0\PascalStringConversions.obj
+         Debug\Objects\5_0_0f0\PathUpdater.obj
+         Debug\Objects\5_0_0f0\TempMemory.obj
+         Debug\Objects\5_0_0f0\Win32StreamBuf.obj
+         Debug\Objects\5_0_0f0\xlcall.obj
+         Debug\Objects\5_0_0f0\XlfAbstractCmdDesc.obj
+         Debug\Objects\5_0_0f0\XlfArgDesc.obj
+         Debug\Objects\5_0_0f0\XlfArgDescList.obj
+         Debug\Objects\5_0_0f0\XlfCmdDesc.obj
+         Debug\Objects\5_0_0f0\XlfExcel.obj
+         Debug\Objects\5_0_0f0\XlfFuncDesc.obj
+         Debug\Objects\5_0_0f0\XlfOperImpl.obj
+         Debug\Objects\5_0_0f0\XlfOperProperties.obj
+         Debug\Objects\5_0_0f0\XlfRef.obj
+         Debug\Objects\5_0_0f0\XlfServices.obj
+         Debug\Objects\5_0_0f0\XlFunctionRegistration.obj
+         Debug\Objects\5_0_0f0\XlOpenClose.obj
+         xlw.vcxproj -> D:\softdev\xlw-5.0.0f0\xlw\build\vc11\..\..\lib\xlw-vc110-mt-gd-5_0_0f0.lib
+     1>Done Building Project "D:\softdev\xlw-5.0.0f0\xlw\build\vc11\xlw.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:13.39
