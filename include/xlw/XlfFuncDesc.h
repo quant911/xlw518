@@ -127,7 +127,8 @@ namespace xlw {
         XlfFuncDesc& operator=(const XlfFuncDesc&);
 
         //! Shared registration code
-        int RegisterAs(const std::string& dllName, const std::string& suggestedHelpId, double mode_) const;
+        int RegisterAs(const std::string& dllName, const std::string& suggestedHelpId, double mode_) const;  //use old Excel4()
+		int RegisterAs12(const std::string& dllName, const std::string& suggestedHelpId, double mode_) const; //use new Excel12()
         std::string helpID_;
         //! Excel code for the datatype of this function's return value.
         // I know it's mutable .. and it's not angelic BUT we may only

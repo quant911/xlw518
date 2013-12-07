@@ -29,6 +29,7 @@
 #include <xlw/XlfException.h>
 #include <xlw/XlfOper4.h>
 #include <xlw/XlfOper.h>
+#include <xlw/XlfOper12.h>
 
 /*!
 \param name
@@ -89,7 +90,7 @@ int xlw::XlfFuncDesc::DoRegister(const std::string& dllName, const std::string& 
         returnTypeCode_= XlfExcel::Instance().xlfOperType();
     if(returnTypeCode_ == "XLW_FP")
         returnTypeCode_= XlfExcel::Instance().fpType();
-    return RegisterAs(dllName, suggestedHelpId, 1);
+    return RegisterAs12(dllName, suggestedHelpId, 1);
 }
 
 int xlw::XlfFuncDesc::DoUnregister(const std::string& dllName) const
@@ -231,6 +232,139 @@ int xlw::XlfFuncDesc::RegisterAs(const std::string& dllName, const std::string& 
 
     XlfOper4 res;
     int err = XlfExcel::Instance().Call4v(xlfRegister, res, 10 + nbargs, &argArray[0]);
+    if(err == xlretSuccess && res.IsNumber())
+    {
+        funcId_ = res.AsDouble();
+    }
+    else
+    {
+        funcId_ = InvalidFunctionId;
+    }
+
+    return err;
+}
+
+
+int xlw::XlfFuncDesc::RegisterAs12(const std::string& dllName, const std::string& suggestedHelpId, double mode_) const
+{
+    // alias arguments
+    XlfArgDescList& arguments = impl_->arguments_;
+
+    int nbargs = static_cast<int>(arguments.size());
+    std::string args(returnTypeCode_);
+    std::string argnames;
+
+    // the synchronous part of an asynchronous function returns void
+    if (XlfExcel::Instance().excel14() && impl_->Asynchronous_)
+    {
+        args = ">";
+    }
+
+    XlfArgDescList::const_iterator it = arguments.begin();
+    while (it != arguments.end())
+    {
+        argnames += (*it).GetName();
+        args += (*it).GetType();
+        ++it;
+        if (it != arguments.end())
+            argnames+=", ";
+    }
+    
+    // When the arguments add up to more then 255 char is problematic. the functions
+    // will not register see  see BUG ID: 2834715 on sourceforge - nc
+    if(argnames.length() > 255)
+    {
+        argnames = "Too many arguments for Function Wizard";
+    }
+
+    // the synchronous part of an asynchronous function have an extra 
+    // bigdata xloper on the end containing the handle
+    if (XlfExcel::Instance().excel14() && impl_->Asynchronous_)
+    {
+        args += "X";
+    }
+    if (impl_->recalcPolicy_ == xlw::XlfFuncDesc::Volatile)
+    {
+        args+="!";
+    }
+    if (XlfExcel::Instance().excel12() && impl_->Threadsafe_)
+    {
+        args+="$";
+    }
+    if (XlfExcel::Instance().excel14() && impl_->ClusterSafe_)
+    {
+        args+="&";
+    }
+    if (impl_->MacroSheetEquivalent_)
+    {
+        args+="#";
+    }
+
+    args+='\0'; // null termination for C string
+
+    std::vector<LPXLOPER12> argArray(10 + nbargs);
+    LPXLOPER12 *px = &argArray[0];
+    std::string functionName(GetName());
+
+    // We need to have 2 functions exposed one for less than
+    // version 14 and that it the normal function, we also need
+    // the Synchronous part that returns void and takes an extra int
+    // By convension this is the same as the normal function but with 
+    // Sync on the end
+    if (XlfExcel::Instance().excel14() && impl_->Asynchronous_)
+    {
+        functionName += "Sync";
+    }
+
+    (*px++) = XlfOper12(dllName);
+    (*px++) = XlfOper12(functionName);
+    (*px++) = XlfOper12(args);
+    (*px++) = XlfOper12(GetAlias());
+    (*px++) = XlfOper12(argnames);
+    (*px++) = XlfOper12(mode_);
+    (*px++) = XlfOper12(impl_->category_);
+    (*px++) = XlfOper12(""); // shortcut
+    // use best help context
+    if(!helpID_.empty() && helpID_ != "auto")
+    {
+        (*px++) = XlfOper12(helpID_);
+    }
+    else
+    {
+        (*px++) = XlfOper12(suggestedHelpId); 
+    }
+    (*px++) = XlfOper12(GetComment());
+    int counter(0);
+    for (it = arguments.begin(); it != arguments.end(); ++it)
+    {
+        ++counter;
+        if(counter < nbargs)
+        {
+            (*px++) = XlfOper12((*it).GetComment());
+        }
+        else
+        {
+            // add dot space to last comment to work around known excel bug
+            // see http://msdn.microsoft.com/en-us/library/bb687841.aspx
+            (*px++) = XlfOper12((*it).GetComment() + ". ");
+        }
+    }
+
+    if(XlfExcel::Instance().excel12())
+    {
+        // total number of arguments limited to 255
+        // so we can't send more than 245 argument comments
+        nbargs = std::min(nbargs, 245);
+    }
+    else
+    {
+        // you can't send more than 30 arguments to the register function
+        // in up to version 2003, so just only send help for up to the first 20 parameters
+        nbargs = std::min(nbargs, 20);
+    }
+
+    XlfOper12 res;
+    int err = XlfExcel::Instance().Call12v(xlfRegister, res, 10 + nbargs, &argArray[0]);
     if(err == xlretSuccess && res.IsNumber())
     {
         funcId_ = res.AsDouble();
